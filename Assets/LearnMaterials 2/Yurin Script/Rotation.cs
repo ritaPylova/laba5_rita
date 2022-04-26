@@ -2,13 +2,24 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Rotation : MonoBehaviour
+public class Rotation : SampleScript
 {
     float x;
-    private void Update()
+     public int speed;
+
+    public override void Use()
     {
-        x +=Time.deltaTime * 10;
-        transform.rotation = Quaternion.Euler(x, 0, 0);
+
+        Transform();
     }
 
+    public void Transform()
+    {
+        x +=Time.deltaTime * speed;
+        transform.rotation = Quaternion.Euler(x, 0, 0);
+    }
+    private void Update()
+    {
+        Use();
+    }
 }
