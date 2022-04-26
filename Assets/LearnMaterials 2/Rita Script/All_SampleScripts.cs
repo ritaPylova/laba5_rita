@@ -2,17 +2,22 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class All_SampleScripts : MonoBehaviour
+public class AtivateScript : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+
+    [SerializeField]
+    List<SampleScript> sampleScripts;
+
+
+    [ContextMenu("Запустить")]
+    void Activate()
     {
-        
+
+        foreach (var item in sampleScripts)
+        {
+            item.Use();
+        }
+
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }
