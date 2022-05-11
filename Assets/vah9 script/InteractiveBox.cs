@@ -6,8 +6,10 @@ public class InteractiveBox : MonoBehaviour
 {
     public InteractiveBox next;
     public void AddNext(InteractiveBox box)
-    {
+    { 
+        if (next is null)
         next = box;
+
     }
 
     // Update is called once per frame
